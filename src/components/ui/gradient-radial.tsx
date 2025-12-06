@@ -15,9 +15,20 @@ const GradientRadial = ({
 }: GradientRadialProps) => {
   return (
     <>
-      {/* Layer 1 */}
       <div
-        className='pointer-events-none absolute -z-10'
+        className='pointer-events-none absolute -z-10 md:hidden'
+        style={{
+          width: '110vw',
+          height: '100vh',
+          top: '-60',
+          left: '-10',
+          opacity: 0.8,
+          background: `radial-gradient(120% 120% at ${positionLayer1}, rgba(20,155,176,0.8) 0%, rgba(20,155,176,0) 100%)`,
+        }}
+      />
+
+      <div
+        className='pointer-events-none absolute -z-10 hidden md:block'
         style={{
           width: '1845px',
           height: '1230px',
@@ -28,9 +39,8 @@ const GradientRadial = ({
         }}
       />
 
-      {/* Layer 2 */}
       <div
-        className='pointer-events-none absolute -z-10'
+        className='pointer-events-none absolute -z-10 hidden md:block'
         style={{
           width: '1845px',
           height: '1230px',
@@ -41,9 +51,8 @@ const GradientRadial = ({
         }}
       />
 
-      {/* Layer 3 */}
       <div
-        className='pointer-events-none absolute -z-10'
+        className='pointer-events-none absolute -z-10 hidden md:block'
         style={{
           width: '1845px',
           height: '1230px',

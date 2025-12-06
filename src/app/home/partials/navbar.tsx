@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import Link from 'next/link';
 import React from 'react';
 
-import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetTrigger,
@@ -39,9 +38,10 @@ const Navbar = () => {
       className='fixed top-0 left-0 z-50 w-full'
     >
       <div className='flex justify-between pt-4 md:justify-center md:pt-8'>
-        <div className='flex-center custom-container backdrop-blur-40 h-[48px] w-[361px] gap-6 rounded-full bg-black/40 px-6 md:w-[528px] md:bg-black/20'>
+        <div className='custom-container backdrop-blur-40 flex h-[48px] w-[361px] items-center justify-between gap-6 rounded-full bg-black/40 px-6 md:w-[528px] md:bg-black/20'>
           <h1 className='text-lg font-bold text-white'>Timtim</h1>
 
+          {/* DESKTOP NAV */}
           <nav className='hidden lg:block'>
             <ul className='flex'>
               {navigationData.map((data) => (
@@ -57,11 +57,17 @@ const Navbar = () => {
             </ul>
           </nav>
 
-          {/* Hamburger */}
+          {/* MOBILE MENU */}
           <Sheet>
             <SheetTrigger asChild>
-              <Menu className='cursor-pointer lg:hidden' />
+              <button
+                type='button'
+                className='text-white transition hover:opacity-75 lg:hidden'
+              >
+                <Menu className='cursor-pointer' />
+              </button>
             </SheetTrigger>
+
             <SheetContent>
               <nav className='mt-16'>
                 <ul className='flex flex-col gap-4'>
